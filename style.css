@@ -1,8 +1,29 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
+* {
+  padding: 0;
+  margin: 0;
+}
+
 #map {
-  height: 100%;
+  width: 100%;
   background-color: aqua;
+  position: absolute;
+  height: 100%;
+  /* z-index: -1; */
+}
+
+#app {
+  position: relative;
+  /* z-index: 1; */
+  /* overflow-y: scroll; */
+}
+
+#sidebar {
+  height: 610px;
+  overflow-y: scroll;
+  background-color: #fff;
+  width: 280px;
 }
 
 /* Optional: Makes the sample page fill the window. */
