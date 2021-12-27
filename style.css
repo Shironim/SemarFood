@@ -13,6 +13,11 @@
   /* z-index: -1; */
 }
 
+#nav {
+  display: block;
+  width: 100%;
+}
+
 #app {
   position: relative;
   /* z-index: 1; */
