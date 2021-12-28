@@ -1,2 +1,0 @@
-# SemarFood
-Tim RPLL SemarFood
