@@ -74,6 +74,9 @@ include 'functions.php';
             <li class="nav-item ">
               <a href="?m=login" class="text-white nav-link active"><span></span> Login</a>
             </li>
+            <li class="nav-item ">
+              <a href="?m=register" class="text-white nav-link active"><span></span> Register</a>
+            </li>
           <?php endif ?>
         </ul>
       </div>
