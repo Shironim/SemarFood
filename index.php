@@ -54,6 +54,9 @@ include 'functions.php';
 
       <div class="collapse navbar-collapse show" id="navbarColor03">
         <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a href="index.php" class="text-white nav-link active"><span></span> SemarFood</a>
+          </li>
           <?php if ($_SESSION['login']) : ?>
             <li class="nav-item">
               <a href="?m=tempat" class="text-white nav-link active"><span></span> Tempat</a>
