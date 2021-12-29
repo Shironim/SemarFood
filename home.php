@@ -1,5 +1,5 @@
 <br>
-<div id="map" style="height: 520px;"></div>
+<div id="map" style="height: 500px;"></div>
 <script>
     function tampilDekat() {
         getCurLocation();
