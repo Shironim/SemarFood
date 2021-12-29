@@ -10,13 +10,54 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
         <div>
         <?=$row->keterangan?>
         </div>
+        <div>
+            <div class="review_container" style="width: 100%;border:2px solid;border-radius: 8px;">
+                <div class="card border-secondary mb-3" style="max-width: 90%;margin: 10px auto 20px auto;">
+                <div class="card-header" style="border-bottom: 1px solid;">
+                    <div style="display: flex;justify-content:space-between;">
+                        <div style="display: flex;justify-content:flex-start;">
+                            <img src="assets/account-circle-fill.png" alt="">
+                            <p style="border: 2px;">Dimas Seto</p>
+                        </div>
+                        <div style="display: flex;justify-content:flex-start;">
+                            <img src="assets/star-s-fill.png" alt="">
+                            <img src="assets/star-s-fill.png" alt="">
+                            <img src="assets/star-s-fill.png" alt="">
+                            <img src="assets/star-s-fill.png" alt="">
+                            <img src="assets/star-s-fill.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Makanan mantap ,tempat cakep</p>
+                </div>
+                </div>
+
+                <div class="card border-secondary mb-3" style="max-width: 90%;margin: 10px auto 10px auto;">
+                <div class="card-header" style="border-bottom: 1px solid;">
+                    <div style="display: flex;justify-content:space-between;">
+                        <div style="display: flex;justify-content:flex-start;">
+                            <img src="assets/account-circle-fill.png" alt="">
+                            <p style="border: 2px;">Dimas Seto</p>
+                        </div>
+                        <div style="display: flex;justify-content:flex-start;">
+                            <img src="assets/star-s-fill.png" alt="">
+                            <img src="assets/star-s-fill.png" alt="">
+                            <img src="assets/star-s-fill.png" alt="">
+                            <img src="assets/star-s-fill.png" alt="">
+                            <img src="assets/star-s-fill.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Makanan mantap ,tempat cakep</p>
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-6">
-        <p>
-            <a href="?m=tempat_list" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-chevron-left"></span> Lihat semua tempat</a>
-            <a href="javascript:void(0)" onclick="showRoute()" class="btn btn-info btn-sm"> <span class="glyphicon glyphicon-search"></span> Tampilkan Rute </a>
-            <a href="?m=detail&ID=<?=$_GET['ID']?>" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-list"></span> Rute Detail</a>
-        </p>
+    
         <div id="map" style="height: 500px;"></div>
         <h3>Galeri</h3>
         <div class="row">
@@ -24,8 +65,8 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
             $rows = $db->get_results("SELECT * FROM tb_galeri WHERE id_tempat='$_GET[ID]'");
             foreach($rows as $r):?>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="thumbnail" href="#" data-image-id="" data-toggle="modal"data-title="<?=$r->nama_galeri?>" data-caption="<?=strip_tags($r->ket_galeri)?>" data-image="assets/images/galeri/<?=$r->gambar?>" data-target="#image-gallery">
-                    <img src="assets/images/galeri/small_<?=$r->gambar?>" title="<?=$r->nama_galeri?>" />
+                <a class="" href="#" data-image-id="" data-toggle="modal" data-title="<?=$r->nama_galeri?>" data-caption="<?=strip_tags($r->ket_galeri)?>" data-image="assets/images/galeri/<?=$r->gambar?>" data-target="#image-gallery">
+                    <img src="assets/images/galeri/small_<?=$r->gambar?>" title="<?=$r->nama_galeri?>" class="img-thumbnail mb-4"/>
                 </a> 
             </div>
         <?php endforeach?>
@@ -33,7 +74,7 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
     </div>
 </div>
 
-<div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
