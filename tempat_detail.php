@@ -19,13 +19,6 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
                             <img src="assets/account-circle-fill.png" alt="">
                             <p style="border: 2px;">Dimas Seto</p>
                         </div>
-                        <div style="display: flex;justify-content:flex-start;">
-                            <img src="assets/star-s-fill.png" alt="">
-                            <img src="assets/star-s-fill.png" alt="">
-                            <img src="assets/star-s-fill.png" alt="">
-                            <img src="assets/star-s-fill.png" alt="">
-                            <img src="assets/star-s-fill.png" alt="">
-                        </div>
                     </div>
                 </div>
                 <div class="card-body">
@@ -33,26 +26,6 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
                 </div>
                 </div>
 
-                <div class="card border-secondary mb-3" style="max-width: 90%;margin: 10px auto 10px auto;">
-                <div class="card-header" style="border-bottom: 1px solid;">
-                    <div style="display: flex;justify-content:space-between;">
-                        <div style="display: flex;justify-content:flex-start;">
-                            <img src="assets/account-circle-fill.png" alt="">
-                            <p style="border: 2px;">Dimas Seto</p>
-                        </div>
-                        <div style="display: flex;justify-content:flex-start;">
-                            <img src="assets/star-s-fill.png" alt="">
-                            <img src="assets/star-s-fill.png" alt="">
-                            <img src="assets/star-s-fill.png" alt="">
-                            <img src="assets/star-s-fill.png" alt="">
-                            <img src="assets/star-s-fill.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Makanan mantap ,tempat cakep</p>
-                </div>
-                </div>
             </div>
         </div>
     </div>
@@ -77,19 +50,6 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
     </div>
 </div>
 
-<!-- <div class="modal fade" id="image-gallery" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-            <img id="image-gallery-image" class="img-responsives" src="" alt="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -102,16 +62,11 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
                 <img id="image-gallery-image" class="img-fluid" src="">
                 <div class="text-justify" id="image-gallery-caption">
                         This text will be overwritten by jQuery
-                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <div class="row">
-
-                    <div class="col-6 col-sm-4">
-                        <button type="button" id="show-next-image" class="btn btn-default">Next</button>
-                        <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
-                    </div>
-                </div>
+                    <button type="button" id="show-next-image" class="btn btn-default">Next</button>
+                    <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
             </div>
         </div>
     </div>
