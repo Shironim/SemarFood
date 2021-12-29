@@ -1,6 +1,40 @@
-<div class="page-header">
-    <h1>Sistem Informasi Geografis</h1>
-</div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<br>
+<div id="map" style="height: 520px;"></div>
+<script>
+    function tampilDekat() {
+        getCurLocation();
+
+        map_dekat = new google.maps.Map(document.getElementById('map'), {
+            zoom: <?= get_option('default_zoom') ?>,
+            center: {
+                lat: default_lat,
+                lng: default_lng
+            }
+        });
+
+        var data = <?= json_encode($db->get_results("SELECT * FROM tb_tempat")) ?>;
+        $.each(data, function(k, v) {
+            var pos = {
+                lat: parseFloat(v.lat),
+                lng: parseFloat(v.lng)
+            };
+            var contentString = '<h3>' + v.nama_tempat + '</h3>' +
+                '<p align="center"><a href="?m=tempat_detail&ID=' + v.id_tempat + '" class="link_detail btn btn-primary">Lihat Detail</a>';
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: map_dekat,
+                animation: google.maps.Animation.DROP
+            });
+            marker.addListener('click', function() {
+                infowindow.open(map_dekat, marker);
+            });
+        });
+    }
+
+    $(function() {
+        tampilDekat();
+    })
+</script>
