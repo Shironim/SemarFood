@@ -65,7 +65,10 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
             $rows = $db->get_results("SELECT * FROM tb_galeri WHERE id_tempat='$_GET[ID]'");
             foreach($rows as $r):?>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                <a class="" href="#" data-image-id="" data-toggle="modal" data-title="<?=$r->nama_galeri?>" data-caption="<?=strip_tags($r->ket_galeri)?>" data-image="assets/images/galeri/<?=$r->gambar?>" data-target="#image-gallery">
+                <!-- <a class="" href="#" data-image-id="" data-bs-toggle="modal" data-title="<?=$r->nama_galeri?>" data-caption="<?=strip_tags($r->ket_galeri)?>" data-image="assets/images/galeri/<?=$r->gambar?>" data-bs-target="#image-gallery">
+                    <img src="assets/images/galeri/small_<?=$r->gambar?>" title="<?=$r->nama_galeri?>" class="img-thumbnail mb-4"/>
+                </a>  -->
+                <a class="thumbnail" href="#" data-image-id="" data-bs-toggle="modal"data-title="<?=$r->nama_galeri?>" data-caption="<?=strip_tags($r->ket_galeri)?>" data-image="assets/images/galeri/<?=$r->gambar?>" data-bs-target="#image-gallery">
                     <img src="assets/images/galeri/small_<?=$r->gambar?>" title="<?=$r->nama_galeri?>" class="img-thumbnail mb-4"/>
                 </a> 
             </div>
@@ -74,28 +77,40 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
     </div>
 </div>
 
-<div class="modal" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="image-gallery" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+            <img id="image-gallery-image" class="img-responsives" src="" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="image-gallery-title"></h4>
+                <h5 class="modal-title" id="image-gallery-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img id="image-gallery-image" class="img-responsive" src="">
+                <img id="image-gallery-image" class="img-fluid" src="">
+                <div class="text-justify" id="image-gallery-caption">
+                        This text will be overwritten by jQuery
+                    </div>
             </div>
             <div class="modal-footer">
+                <div class="row">
 
-                <div class="col-md-2">
-                    <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
-                </div>
-
-                <div class="col-md-8 text-justify" id="image-gallery-caption">
-                    This text will be overwritten by jQuery
-                </div>
-
-                <div class="col-md-2">
-                    <button type="button" id="show-next-image" class="btn btn-default">Next</button>
+                    <div class="col-6 col-sm-4">
+                        <button type="button" id="show-next-image" class="btn btn-default">Next</button>
+                        <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
+                    </div>
                 </div>
             </div>
         </div>
