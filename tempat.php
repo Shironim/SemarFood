@@ -43,8 +43,8 @@
                     <td><?= $row->lng ?></td>
                     <td><?= $row->lokasi ?></td>
                     <td class="nw">
-                        <a class="btn btn-xs btn-warning" href="?m=tempat_ubah&ID=<?= $row->id_tempat ?>"><span class="glyphicon glyphicon-edit"></span></a>
-                        <a class="btn btn-xs btn-danger" href="aksi.php?act=tempat_hapus&ID=<?= $row->id_tempat ?>" onclick="return confirm('Hapus data?')"><span class="glyphicon glyphicon-trash"></span></a>
+                        <a class="btn btn-xs btn-warning" href="?m=tempat_ubah&ID=<?= $row->id_tempat ?>"><span class="glyphicon glyphicon-edit">Edit</span></a>
+                        <a class="btn btn-xs btn-danger" href="aksi.php?act=tempat_hapus&ID=<?= $row->id_tempat ?>" onclick="return confirm('Hapus data?')"><span class="glyphicon glyphicon-trash">Hapus</span></a>
                     </td>
                 </tr>
             <?php endforeach;    ?>
