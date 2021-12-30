@@ -23,12 +23,15 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
                         <p class="card-text">Makanan mantap ,tempat cakep</p>
                     </div>
                 </div>
-
+                <div class="input-group mb-3" style="margin: 12px;">
+                    <input type="text" class="form-control" placeholder="masukan komentar disini" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-primary btn-dark" type="button" id="button-addon2" style="margin-right: 24px;" data-bs-toggle="modal" data-bs-target="#poplogin">Post</button>
+                </div>
             </div>
+
         </div>
     </div>
     <div class="col-md-6">
-
         <div id="map" style="height: 500px;"></div>
         <h3>Galeri</h3>
         <div class="row">
@@ -63,11 +66,27 @@ $row = $db->get_row("SELECT * FROM tb_tempat WHERE id_tempat='$_GET[ID]'");
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" id="show-next-image" class="btn btn-default">Next</button>
+                <button type="button" id="show-next-image" class="btn btn-primary">Next</button>
                 <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade" id="poplogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        untuk dapat mengirim komentar anda harus melakukan login
+      </div>
+      <div class="modal-footer">
+      <a href="?m=login" style="text-decoration: none;color:azure"><button type="button" class="btn btn-primary">Login</button></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
