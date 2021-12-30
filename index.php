@@ -35,8 +35,7 @@ include 'functions.php';
       toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
     });
   </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiDdGyp6n2hKHPECuB6JZIT-8dVHCpwI0&language=id&region=ID"></script>
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAidve3dd0jZmDEgdEkM1ettoSJLlB5tqs&callback=initMap&v=weekly"></script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAidve3dd0jZmDEgdEkM1ettoSJLlB5tqs&callback=initMap&v=weekly"></script>
   <script>
     var default_lat = <?= get_option('default_lat') ?>;
     var default_lng = <?= get_option('default_lng') ?>;

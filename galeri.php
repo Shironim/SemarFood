@@ -51,8 +51,8 @@
             <td><img class="thumbnail" src="assets/images/galeri/small_<?=$row->gambar?>" height="60" /></td>
             <td><?=$row->nama_galeri?></td>
             <td class="nw">
-                <a class="btn btn-xs btn-warning" href="?m=galeri_ubah&ID=<?=$row->id_galeri?>"><span class="glyphicon glyphicon-edit"></span></a>
-                <a class="btn btn-xs btn-danger" href="aksi.php?act=galeri_hapus&ID=<?=$row->id_galeri?>" onclick="return confirm('Hapus data?')"><span class="glyphicon glyphicon-trash"></span></a>
+                <a class="btn btn-xs btn-warning" href="?m=galeri_ubah&ID=<?=$row->id_galeri?>"><span class="glyphicon glyphicon-edit">Edit</span></a>
+                <a class="btn btn-xs btn-danger" href="aksi.php?act=galeri_hapus&ID=<?=$row->id_galeri?>" onclick="return confirm('Hapus data?')"><span class="glyphicon glyphicon-trash">Hapus</span></a>
             </td>
         </tr>
         <?php endforeach;    ?>
